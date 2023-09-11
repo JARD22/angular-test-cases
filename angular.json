@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularConfig": {
+    "angularTestCases": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angularConfig:build:production"
+              "browserTarget": "angularTestCases:build:production"
             },
             "development": {
-              "browserTarget": "angularConfig:build:development"
+              "browserTarget": "angularTestCases:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularConfig:build"
+            "browserTarget": "angularTestCases:build"
           }
         },
         "test": {
