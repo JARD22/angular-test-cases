@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-config",
+            "outputPath": "dist/angular-test-cases",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
