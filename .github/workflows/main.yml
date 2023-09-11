@@ -27,6 +27,9 @@ jobs:
       # Install dependencies
       - name: Install deps
         run: npm i
+      # Test application
+      - name: Run tests
+        run: npm run test
       # Build app for production
       - name: Build app bundle
         run: npm run build:prod
