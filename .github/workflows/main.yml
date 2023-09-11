@@ -24,8 +24,18 @@ jobs:
         uses: actions/setup-node@v3.7.0
         with:
           node-version: '18'
+      # Check cache
+      - name: Cache for node modules
+        id: cache_node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       # Install dependencies
       - name: Install deps
+        if: steps.cache_node_modules.outputs.cache-hit != 'true'
         run: npm i
       # Test application
       - name: Run tests
